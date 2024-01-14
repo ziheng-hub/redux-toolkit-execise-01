@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { selectAllPosts } from "./postSlice";
+import { PostAuthor } from "./PostAuthor";
 
 const PostsList = () => {
   // 将来的にstate.postsの内部構造が変わった場合、このように外部のComponentで直接useSelectorを呼ぶのではなく、内部でuseSelectorをExportして、外部で使う。
@@ -12,13 +13,16 @@ const PostsList = () => {
         <h3>{post.title}</h3>
        
         <p>{post.content.substring(0, 100)}</p>
+        <p>
+          <PostAuthor userId={post.id} />
+        </p>
       </article>
     );
   });
 
   return (
     <section>
-      <h2>入力結果</h2>
+      <h2>投稿結果</h2>
       {renderedPosts}
     </section>
   );

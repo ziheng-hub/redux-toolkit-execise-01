@@ -3,12 +3,12 @@ import { nanoid } from "@reduxjs/toolkit";
 
 const initialState = [
   {
-    id: nanoid(),
+    id: "1",
     title: "Redux Toolkit",
     content: "Redux Toolkit is same as UseReducer of React",
   },
   {
-    id: nanoid(),
+    id: "2",
     title: "UseReducer",
     content: "UseReducer of React is same as Redux Toolkit",
   },
@@ -22,12 +22,13 @@ const postSlice = createSlice({
         reducer(state,action){
             state.push(action.payload)
         },
-        prepare(title,content){
+        prepare(title,content,userId){
             return {
                 payload:{
                     id:nanoid(),
                     title:title,
-                    content:content
+                    content:content,
+                    userId:userId,
                 }
             }
         }
