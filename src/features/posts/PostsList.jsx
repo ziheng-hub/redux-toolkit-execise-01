@@ -14,7 +14,7 @@ const PostsList = () => {
        
         <p>{post.content.substring(0, 100)}</p>
         <p>
-          <PostAuthor userId={post.id} />
+          <PostAuthor userId={post.userId} />
         </p>
       </article>
     );
