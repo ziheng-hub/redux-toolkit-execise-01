@@ -6,11 +6,13 @@ const initialState = [
     id: "1",
     title: "Redux Toolkit",
     content: "Redux Toolkit is same as UseReducer of React",
+    date:new Date().toISOString(),
   },
   {
     id: "2",
     title: "UseReducer",
     content: "UseReducer of React is same as Redux Toolkit",
+    date:new Date().toISOString()
   },
 ];
 
@@ -29,6 +31,7 @@ const postSlice = createSlice({
                     title:title,
                     content:content,
                     userId:userId,
+                    date:new Date().toISOString(),
                 }
             }
         }

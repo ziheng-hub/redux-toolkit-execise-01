@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { selectAllPosts } from "./postSlice";
 import { PostAuthor } from "./PostAuthor";
+import { TimeAgo } from "./TimeAgo";
 
 const PostsList = () => {
   // 将来的にstate.postsの内部構造が変わった場合、このように外部のComponentで直接useSelectorを呼ぶのではなく、内部でuseSelectorをExportして、外部で使う。
@@ -16,6 +17,7 @@ const PostsList = () => {
         <p>
           <PostAuthor userId={post.userId} />
         </p>
+        <TimeAgo timeStamp={post.date}/>
       </article>
     );
   });
